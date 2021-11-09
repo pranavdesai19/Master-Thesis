@@ -6,41 +6,13 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1304</width>
-    <height>910</height>
+    <width>1193</width>
+    <height>653</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QTextBrowser" name="main_title_browser">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>1200</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Raleway</family>
-     <pointsize>10</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color:rgba(0, 0, 127, 120)</string>
-   </property>
-   <property name="html">
-    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Raleway'; font-size:10pt; font-weight:600; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:16pt;&quot;&gt;Renewables Energy - Data Analysis Tool&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="wind_energy">
    <property name="geometry">
     <rect>
@@ -49,6 +21,14 @@ p, li { white-space: pre-wrap; }
      <width>141</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Raleway</family>
+     <pointsize>9</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="styleSheet">
     <string notr="true">width: 200pt;</string>
@@ -66,6 +46,14 @@ p, li { white-space: pre-wrap; }
      <height>41</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Raleway</family>
+     <pointsize>9</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="styleSheet">
     <string notr="true">width: 200pt;</string>
    </property>
@@ -81,6 +69,14 @@ p, li { white-space: pre-wrap; }
      <width>141</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Raleway</family>
+     <pointsize>9</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="styleSheet">
     <string notr="true">width: 200pt;</string>
@@ -98,6 +94,14 @@ p, li { white-space: pre-wrap; }
      <height>41</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Raleway</family>
+     <pointsize>9</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="styleSheet">
     <string notr="true">width: 200pt;</string>
    </property>
@@ -113,6 +117,14 @@ p, li { white-space: pre-wrap; }
      <width>141</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Raleway</family>
+     <pointsize>9</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="styleSheet">
     <string notr="true">width: 200pt;</string>
@@ -186,7 +198,7 @@ p, li { white-space: pre-wrap; }
   <widget class="QPlainTextEdit" name="project_description">
    <property name="geometry">
     <rect>
-     <x>20</x>
+     <x>70</x>
      <y>100</y>
      <width>431</width>
      <height>31</height>
@@ -208,19 +220,31 @@ p, li { white-space: pre-wrap; }
   <widget class="QLabel" name="top_10">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>130</y>
-     <width>431</width>
-     <height>61</height>
+     <x>320</x>
+     <y>140</y>
+     <width>291</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>24</pointsize>
+     <family>Raleway</family>
+     <pointsize>16</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:rgb(255, 255, 255)</string>
    </property>
    <property name="text">
     <string>Top 10 Countries by Growth</string>
+   </property>
+   <property name="scaledContents">
+    <bool>false</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
    </property>
   </widget>
   <widget class="QLabel" name="least_10">
@@ -234,17 +258,29 @@ p, li { white-space: pre-wrap; }
    </property>
    <property name="font">
     <font>
-     <pointsize>24</pointsize>
+     <family>Raleway</family>
+     <pointsize>16</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:rgb(255, 255, 255)</string>
    </property>
    <property name="text">
     <string>Least 10 Countries by Growth</string>
+   </property>
+   <property name="scaledContents">
+    <bool>false</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
    </property>
   </widget>
   <widget class="QLabel" name="project_description_title">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>60</x>
      <y>50</y>
      <width>221</width>
      <height>51</height>
@@ -262,60 +298,10 @@ p, li { white-space: pre-wrap; }
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgba(80,80,80);</string>
+    <string notr="true">color:rgb(255, 255, 255)</string>
    </property>
    <property name="text">
     <string>Project Description</string>
-   </property>
-  </widget>
-  <widget class="QGraphicsView" name="graphicsView">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>189</y>
-     <width>50</width>
-     <height>41</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QGraphicsView" name="graphicsView_2">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>240</y>
-     <width>50</width>
-     <height>41</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QGraphicsView" name="graphicsView_3">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>290</y>
-     <width>50</width>
-     <height>41</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QGraphicsView" name="graphicsView_4">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>340</y>
-     <width>50</width>
-     <height>41</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QGraphicsView" name="graphicsView_5">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>390</y>
-     <width>50</width>
-     <height>41</height>
-    </rect>
    </property>
   </widget>
   <widget class="QPushButton" name="top_10_graph">
@@ -326,6 +312,14 @@ p, li { white-space: pre-wrap; }
      <width>141</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Raleway</family>
+     <pointsize>9</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="styleSheet">
     <string notr="true">width: 200pt;</string>
@@ -343,6 +337,14 @@ p, li { white-space: pre-wrap; }
      <height>41</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Raleway</family>
+     <pointsize>9</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="styleSheet">
     <string notr="true">width: 200pt;</string>
    </property>
@@ -350,6 +352,182 @@ p, li { white-space: pre-wrap; }
     <string>Graph</string>
    </property>
   </widget>
+  <widget class="QLabel" name="windenergy_icon">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>190</y>
+     <width>40</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../Icons/1wind-energy.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="solar_energy_icon">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>240</y>
+     <width>40</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../Icons/2solar-energy.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="hydro_energy_icon">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>290</y>
+     <width>40</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../Icons/3hydro-power.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="biomass_energy_icon">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>340</y>
+     <width>40</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../Icons/4biomass.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="geothermal_energy_icon">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>390</y>
+     <width>40</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../Icons/5geothermal-energy.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="background_image">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1191</width>
+     <height>651</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>1191</width>
+     <height>651</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>1191</width>
+     <height>16777215</height>
+    </size>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../Icons/pexels-flickr-157039.jpg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="project_title">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>20</y>
+     <width>651</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Raleway</family>
+     <pointsize>24</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:rgb(255, 255, 255)</string>
+   </property>
+   <property name="text">
+    <string>Renewables Energy - Data Analysis Tool</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <zorder>background_image</zorder>
+  <zorder>wind_energy</zorder>
+  <zorder>solar_energy</zorder>
+  <zorder>hydro_energy</zorder>
+  <zorder>biomass_energy</zorder>
+  <zorder>geothermal_energy</zorder>
+  <zorder>top_10_area</zorder>
+  <zorder>least_10_area</zorder>
+  <zorder>project_description</zorder>
+  <zorder>top_10</zorder>
+  <zorder>least_10</zorder>
+  <zorder>project_description_title</zorder>
+  <zorder>top_10_graph</zorder>
+  <zorder>least_10_graph</zorder>
+  <zorder>windenergy_icon</zorder>
+  <zorder>solar_energy_icon</zorder>
+  <zorder>hydro_energy_icon</zorder>
+  <zorder>biomass_energy_icon</zorder>
+  <zorder>geothermal_energy_icon</zorder>
+  <zorder>project_title</zorder>
  </widget>
  <resources/>
  <connections/>
