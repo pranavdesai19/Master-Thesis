@@ -4,6 +4,8 @@ from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QDialog, QApplication
 import sqlite3
 import pyqtgraph as pg
+import numpy as np
+import time
 from utils import TimeAxisItem, timestamp
 from pyqtgraph.Qt import QtCore, QtGui
 
@@ -167,66 +169,46 @@ class MainWindow(QDialog):
         for item in list(set(cur.execute(comboBoxQuery1))):
             self.comboBox1.addItem(item[0])"""
         # RE1 table 1
-        all_wind_energy_query = "SELECT country, year, growth FROM 'annual-percentage-change-wind' ORDER BY growth DESC"
+        all_wind_energy_query = "SELECT country, year, growth FROM " \
+                                "'annual-percentage-change-wind' " \
+                                "where country in ('Australia','Canada','India','United States','Germany','United Kingdom','World') " \
 
         growth_axis = []
         year_axis = []
         country_series = []
+        all_data = []
 
         for data in cur.execute(all_wind_energy_query):
-            year_axis.append(data[1])
-            growth_axis.append(data[2])
-            country_series.append(data[0])
+            all_data.append(data)
 
-        year_axis = list(set(year_axis))
-        growth_axis_min = min(list(set(growth_axis)))
-        growth_axis_max = max(list(set(growth_axis)))
+        all_data = list(filter(lambda value: value[2] < 400, all_data))
 
-        print(year_axis)
-        print(year_axis[0])
-        print(year_axis[-1])
+        import itertools
+        import operator
 
-        # y values to plot by line 1
-        y = [2, 8, 6, 8, 6, 11, 14, 13, 18, 19]
 
-        # y values to plot by line 2
-        y2 = [3, 1, 5, 8, 9, 11, 16, 17, 14, 16]
-        x = range(0, 10)
 
         # create plot window object
-        plt = pg.plot()
 
-        # showing x and y grids
-        plt.showGrid(x = True, y = True)
+        widget = pg.PlotWidget(axisItems = {'bottom': pg.DateAxisItem()})
+        widget.showGrid(x=True, y=True)
 
-        # adding legend
-        plt.addLegend()
+        # Plot sin(1/x^2) with timestamps in the last 100 years
+        now = time.time()
+        x = np.linspace(2*np.pi, 1000*2*np.pi, 8301)
 
-        # set properties of the label for y axis
-        plt.setLabel('left', 'Vertical Values', units ='y')
+        for key,group in itertools.groupby(all_data,operator.itemgetter(0)):
+            group_list = list(group)
+            growth = list(map(lambda x:x[2], group_list))
+            years = list(map(lambda x:x[1], group_list))
+            widget.plot(years, growth, symbol='o')
 
-        # set properties of the label for x axis
-        plt.setLabel('bottom', 'Horizontal Values', units ='s')
+        #widget.plot(group, range(1999, 2019), symbol='o')
 
-        # setting horizontal range
+        widget.setWindowTitle('pyqtgraph example: DateAxisItem')
+        widget.show()
 
-        plt.setXRange(0, 10)
-
-        # setting vertical range
-        plt.setYRange(0, 20)
-
-        # setting window title to the plot window
-        plt.setWindowTitle(title)
-
-        # ploting line in green color
-        # with dot symbol as x, not a mandatory field
-        line1 = plt.plot(x, y, pen ='g', symbol ='x', symbolPen ='g',
-                         symbolBrush = 0.2, name ='green')
-
-        # ploting line2 with blue color
-        # with dot symbol as o
-        line2 = plt.plot(x, y2, pen ='b', symbol ='o', symbolPen ='b',
-                         symbolBrush = 0.2, name ='blue')
+        pg.plot(widget)
 
 
 app = QApplication(sys.argv)
