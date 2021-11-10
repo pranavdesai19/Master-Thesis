@@ -173,39 +173,30 @@ class MainWindow(QDialog):
                                 "'annual-percentage-change-wind' " \
                                 "where country in ('Australia','Canada','India','United States','Germany','United Kingdom','World') " \
 
-        growth_axis = []
-        year_axis = []
-        country_series = []
         all_data = []
 
         for data in cur.execute(all_wind_energy_query):
             all_data.append(data)
 
+        # filter all greater than 400%
         all_data = list(filter(lambda value: value[2] < 400, all_data))
 
         import itertools
         import operator
+        import random
 
-
-
-        # create plot window object
-
-        widget = pg.PlotWidget(axisItems = {'bottom': pg.DateAxisItem()})
+        widget = pg.PlotWidget()
         widget.showGrid(x=True, y=True)
-
-        # Plot sin(1/x^2) with timestamps in the last 100 years
-        now = time.time()
-        x = np.linspace(2*np.pi, 1000*2*np.pi, 8301)
 
         for key,group in itertools.groupby(all_data,operator.itemgetter(0)):
             group_list = list(group)
             growth = list(map(lambda x:x[2], group_list))
             years = list(map(lambda x:x[1], group_list))
-            widget.plot(years, growth, symbol='o')
+            print(years)
+            widget.plot(years, growth, pen=(random.randint(0,255), random.randint(0,255), random.randint(0,255)), name=f'{group_list[0][0]}')
 
-        #widget.plot(group, range(1999, 2019), symbol='o')
 
-        widget.setWindowTitle('pyqtgraph example: DateAxisItem')
+        widget.setWindowTitle('Renewables Energy Data Analysis')
         widget.show()
 
         pg.plot(widget)
