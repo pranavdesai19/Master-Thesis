@@ -192,8 +192,11 @@ class MainWindow(QDialog):
             group_list = list(group)
             growth = list(map(lambda x:x[2], group_list))
             years = list(map(lambda x:x[1], group_list))
-            print(years)
-            widget.plot(years, growth, pen=(random.randint(0,255), random.randint(0,255), random.randint(0,255)), name=f'{group_list[0][0]}')
+            name = group_list[0][0]
+            widget.plot(years,
+                        growth,
+                        pen=(random.randint(0,255), random.randint(0,255), random.randint(0,255)),
+                        name=name)
 
 
         widget.setWindowTitle('Renewables Energy Data Analysis')
